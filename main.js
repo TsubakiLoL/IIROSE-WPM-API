@@ -31,7 +31,17 @@ class IIROSEAPI {
     }
     
 }
+function proxyFunction (targetFunction, callback) {
+    return ((...param) => {
+        if (callback(param, targetFunction) !== true)
+            return targetFunction(...param)
+    });
+}
+function message_get(p){
+    
+}
 
+socket._onmessage = proxyFunction(socket._onmessage.bind(socket), message_get(p));
 
 IIROSEAPI.send_bullet_message("test");
 
