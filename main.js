@@ -43,5 +43,7 @@ function message_get(p){
 
 socket._onmessage = proxyFunction(socket._onmessage.bind(socket), async (p) => {message_get(p)});
 
+
+var IIROSE_WPM_MES_FINISH=true
 //IIROSEAPI.send_bullet_message("test");
 
