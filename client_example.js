@@ -1,7 +1,7 @@
 
 async start(){
   while(IIROSE_WPM_MES_FINISH!=true){
-    Console.log("阻塞中")
+    console.log("阻塞中")
   }
   var floatingWindow = document.createElement('div');
   floatingWindow.style.position = 'absolute';
@@ -53,6 +53,12 @@ async start(){
 
   // 将悬浮窗容器添加到文档body中
   document.body.appendChild(floatingWindow);
+  //添加监听
+  function dealMessage(e) {
+    console.log(e.data);
+  }
+  IIROSEAPI.add_new_plugin("https://like.tsubaki.fun",el.contentWindow);
+   window.addEventListener('message', dealMessage, false);
 
 }
 
