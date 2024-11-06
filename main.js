@@ -9,5 +9,5 @@ class IIROSEAPI {
     }
 }
 
-IIROSEAPI.send_room_mesage("test");
+IIROSEAPI.send_room_message("test");
 
