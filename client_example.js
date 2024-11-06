@@ -58,7 +58,7 @@ async function start(){
     console.log(e.data);
   }
   IIROSEAPI.add_new_plugin("https://like.tsubaki.fun",el.contentWindow);
-   window.addEventListener('message', dealMessage, false);
+  el.contentWindow.addEventListener('message', dealMessage, false);
 
 }
 
