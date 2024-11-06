@@ -1,5 +1,5 @@
 
-async start(){
+async function start(){
   while(IIROSE_WPM_MES_FINISH!=true){
     console.log("阻塞中")
   }
