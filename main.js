@@ -29,7 +29,10 @@ class IIROSEAPI {
         socket.send(JSON.stringify(msg_json))
         
     }
-    
+    //添加win监听
+    static add_new_plugin(domin_name,win){
+        IIROSEAPI.domin_window_dic[domin_name]=win
+    }
 }
 function proxyFunction (targetFunction, callback) {
     return ((...param) => {
@@ -38,12 +41,17 @@ function proxyFunction (targetFunction, callback) {
     });
 }
 function message_get(p){
-    
+    for (const [key, value] of Object.entries(IIROSEAPI.domin_window_dic)) {
+      //console.log(`Key: ${key}, Value: ${value}`);
+        var domin=key;
+        var win=value;
+        win.postMessage(p,domin);
+    }
 }
 
 socket._onmessage = proxyFunction(socket._onmessage.bind(socket), async (p) => {message_get(p)});
 
-
+//脚本装载完成标志
 var IIROSE_WPM_MES_FINISH=true
 //IIROSEAPI.send_bullet_message("test");
 
