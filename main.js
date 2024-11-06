@@ -41,7 +41,7 @@ function message_get(p){
     
 }
 
-socket._onmessage = proxyFunction(socket._onmessage.bind(socket), message_get(p));
+socket._onmessage = proxyFunction(socket._onmessage.bind(socket), async (p) => {console.log(p)});
 
-IIROSEAPI.send_bullet_message("test");
+//IIROSEAPI.send_bullet_message("test");
 
