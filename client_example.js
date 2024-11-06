@@ -1,6 +1,6 @@
 
 async function start(){
-  while(IIROSE_WPM_MES_FINISH!=true){
+  while(typeof IIROSE_WPM_MES_FINISH === 'undefined'){
     console.log("阻塞中")
   }
   var floatingWindow = document.createElement('div');
