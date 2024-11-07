@@ -55,7 +55,7 @@ async function start(){
   document.body.appendChild(floatingWindow);
   //添加监听
   
-  IIROSEAPI.add_new_plugin("https://like.tsubaki.fun",el.contentWindow);
+  IIROSEAPI.add_new_plugin("https://js.tsubaki.fun",el.contentWindow);
 
 }
 
