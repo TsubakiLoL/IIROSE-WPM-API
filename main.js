@@ -45,7 +45,7 @@ function message_get(p){
       //console.log(`Key: ${key}, Value: ${value}`);
         var domin=key;
         var win=value;
-        win.postMessage(p,domin);
+        win.postMessage(p.toString(),domin);
     }
 }
 
